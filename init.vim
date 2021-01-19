@@ -4,7 +4,6 @@
 call plug#begin('~/.vim/plugged')
     Plug 'gruvbox-community/gruvbox'
     Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'scrooloose/nerdtree'
     Plug 'ryanoasis/vim-devicons'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
@@ -38,21 +37,6 @@ set autoindent
 set smartindent
 set backspace=indent,eol,start
 set re=0
-
-
-"""""""""""""""
-" File Explorer
-"""""""""""""""
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Toggle
-noremap <silent> <C-b> :NERDTreeToggle<CR>
 
 """"""""""""""""
 " File Searching
