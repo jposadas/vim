@@ -2,11 +2,14 @@
 " Plugin Section
 """"""""""""""""
 call plug#begin('~/.vim/plugged')
-    Plug 'gruvbox-community/gruvbox'
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
+
+Plug 'gruvbox-community/gruvbox'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 """"""""""""""""
@@ -49,3 +52,12 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit'
   \}
 
+""""""""""
+" Settings
+""""""""""
+exe 'source' '~/.config/nvim/settings/coc.vim'
+
+""""""""
+" golang
+""""""""
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
