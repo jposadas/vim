@@ -3,7 +3,7 @@
 """""
 
 " Extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-go']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver']
 
 " TextEdit might fail if hidden is not set.
 set hidden

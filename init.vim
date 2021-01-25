@@ -44,7 +44,13 @@ set re=0
 """"""""""""""""
 " File Searching
 """"""""""""""""
-nnoremap <C-p> :GFiles<CR>
+silent! !git rev-parse --is-inside-work-tree
+if v:shell_error == 0
+    nnoremap <C-p> :GFiles<CR>
+else
+    nnoremap <C-p> :Files<CR>
+endif
+
 let g:fzf_layout = {'down': '~20%'}
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -61,3 +67,4 @@ exe 'source' '~/.config/nvim/settings/coc.vim'
 " golang
 """"""""
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
