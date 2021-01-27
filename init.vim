@@ -9,6 +9,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -22,10 +23,11 @@ endif
 syntax enable
 filetype plugin on
 colorscheme gruvbox
+set background=dark
 
 set guicursor=i:block-blinkwait0-blinkon200-blinkoff200
 
-set nu
+set number
 set nowrap
 set nohlsearch
 set expandtab
@@ -62,6 +64,7 @@ let g:fzf_action = {
 " Settings
 """"""""""
 exe 'source' '~/.config/nvim/settings/coc.vim'
+exe 'source' '~/.config/nvim/settings/vim-go.vim'
 
 """"""""
 " golang
