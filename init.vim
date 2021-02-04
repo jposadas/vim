@@ -43,6 +43,8 @@ set autoindent
 set smartindent
 set backspace=indent,eol,start
 set re=0
+set splitbelow
+set splitright
 
 """"""""""""""""
 " File Searching
