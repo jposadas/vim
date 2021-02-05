@@ -12,6 +12,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'iloginow/vim-stylus'
 Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
 
 call plug#end()
 
