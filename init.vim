@@ -11,6 +11,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'iloginow/vim-stylus'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -24,10 +25,10 @@ endif
 syntax enable
 filetype plugin on
 colorscheme gruvbox
+
+set nocompatible
 set background=dark
-
 set guicursor=i:block-blinkwait0-blinkon200-blinkoff200
-
 set number
 set nowrap
 set nohlsearch
@@ -45,6 +46,9 @@ set backspace=indent,eol,start
 set re=0
 set splitbelow
 set splitright
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 """"""""""""""""
 " File Searching
@@ -68,9 +72,9 @@ let g:fzf_action = {
 """"""""""
 exe 'source' '~/.config/nvim/settings/coc.vim'
 exe 'source' '~/.config/nvim/settings/vim-go.vim'
+exe 'source' '~/.config/nvim/settings/vimwiki.vim'
 
 """"""""
 " golang
 """"""""
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
