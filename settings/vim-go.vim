@@ -11,3 +11,4 @@ let g:go_fmt_autosave = 0
 " nnoremap <F7> :GoReferrers<CR>
 " nnoremap <A-F7> :GoReferrers<CR>
 " nnoremap <F12> :GoDeclsDir<CR>
+
