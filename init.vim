@@ -3,7 +3,7 @@
 """"""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'gruvbox-community/gruvbox'
+Plug 'itchyny/lightline.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
@@ -13,6 +13,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'iloginow/vim-stylus'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki', {'branch': 'dev'}
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -25,7 +26,7 @@ endif
 
 syntax enable
 filetype plugin on
-colorscheme gruvbox
+colorscheme nord
 
 set nocompatible
 set background=dark
@@ -47,30 +48,16 @@ set backspace=indent,eol,start
 set re=0
 set splitbelow
 set splitright
+set noshowmode
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-""""""""""""""""
-" File Searching
-""""""""""""""""
-silent! !git rev-parse --is-inside-work-tree
-if v:shell_error == 0
-    nnoremap <C-p> :GFiles<CR>
-else
-    nnoremap <C-p> :Files<CR>
-endif
-
-let g:fzf_layout = {'down': '~20%'}
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
-
 """"""""""
 " Settings
 """"""""""
+exe 'source' '~/.config/nvim/settings/fzf.vim'
+exe 'source' '~/.config/nvim/settings/vim-lightline.vim'
 exe 'source' '~/.config/nvim/settings/coc.vim'
 exe 'source' '~/.config/nvim/settings/vim-go.vim'
 exe 'source' '~/.config/nvim/settings/vimwiki.vim'
