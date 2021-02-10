@@ -1,16 +1,24 @@
 {
-    "diagnostic.checkCurrentLine": true,
-    "suggest.noselect": false,
-    "languageserver": {
-        "go": {
-            "command": "gopls",
-            "rootPatterns": [
-                "go.mod"
-            ],
-            "trace.server": "verbose",
-            "filetypes": [
-                "go"
-            ]
-        }
+  "diagnostic.errorSign": ">>",
+  "diagnostic.warningSign": "--",
+  "diagnostic.checkCurrentLine": true,
+
+  "suggest.noselect": false,
+
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "trace.server": "verbose",
+      "filetypes": ["go"]
     }
+  },
+
+  "typescript.suggest.enabled": false,
+  "typescript.validate.enable": false,
+
+  "javascript.suggest.enabled": false,
+  "javascript.validate.enable": false,
+
+  "eslint.autoFixOnSave": true
 }

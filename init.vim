@@ -1,3 +1,5 @@
+let g:ale_disable_lsp = 1
+
 """"""""""""""""
 " Plugin Section
 """"""""""""""""
@@ -14,6 +16,8 @@ Plug 'iloginow/vim-stylus'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki', {'branch': 'dev'}
 Plug 'arcticicestudio/nord-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -49,6 +53,9 @@ set re=0
 set splitbelow
 set splitright
 set noshowmode
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightgrey guibg=#2d323d
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
