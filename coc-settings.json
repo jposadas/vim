@@ -1,4 +1,5 @@
 {
+    "diagnostic.checkCurrentLine": true,
     "suggest.noselect": false,
     "languageserver": {
         "go": {
