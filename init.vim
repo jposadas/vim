@@ -18,6 +18,7 @@ Plug 'vimwiki/vimwiki', {'branch': 'dev'}
 Plug 'arcticicestudio/nord-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 
 call plug#end()
 

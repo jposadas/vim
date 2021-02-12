@@ -14,11 +14,13 @@
     }
   },
 
-  "typescript.suggest.enabled": false,
-  "typescript.validate.enable": false,
+  "typescript.suggest.enabled": true,
+  "typescript.validate.enable": true,
+  "typescript.suggestionActions.enabled": false,
 
-  "javascript.suggest.enabled": false,
+  "javascript.suggest.enabled": true,
   "javascript.validate.enable": false,
+  "javascript.suggestionActions.enabled": false,
 
   "eslint.autoFixOnSave": true
 }
