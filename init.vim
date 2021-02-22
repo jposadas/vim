@@ -14,14 +14,18 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'iloginow/vim-stylus'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki', {'branch': 'dev'}
-Plug 'arcticicestudio/nord-vim'
-Plug 'gruvbox-community/gruvbox'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+Plug 'arcticicestudio/nord-vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'AlessandroYorba/Alduin'
+Plug 'nanotech/jellybeans.vim'
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'mhartington/formatter.nvim'
 
 call plug#end()
 
@@ -34,7 +38,7 @@ endif
 
 syntax on
 filetype plugin on
-colorscheme nord
+colorscheme jellybeans
 
 set nocompatible
 set background=dark
@@ -58,6 +62,7 @@ set splitbelow
 set splitright
 set noshowmode
 set signcolumn=number
+set cursorline
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=lightgrey guibg=#2d323d

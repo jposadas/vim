@@ -2,7 +2,10 @@ local lsp_config = require "lspconfig"
 local nvim_completion = require "completion"
 
 lsp_config.tsserver.setup {
-    on_attach = nvim_completion.on_attach,
+    on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+        nvim_completion.on_attach(client)
+    end
 }
 
 lsp_config.gopls.setup {
@@ -51,4 +54,33 @@ lsp_config.diagnosticls.setup {
     },
 }
 
+require('formatter').setup({
+	logging = false,
+	filetype = {
+		typescript = {
+			function()
+				return {
+					exe = "./node_modules/.bin/prettier",
+					args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+					stdin = true,
+				}
+			end
+		},
+		typescriptreact = {
+			function()
+				return {
+					exe = "./node_modules/.bin/prettier",
+					args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+					stdin = true,
+				}
+			end
+		}
+	},
+})
 
+vim.api.nvim_exec([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.ts,*.tsx FormatWrite
+augroup END
+]], true)
