@@ -27,6 +27,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'mhartington/formatter.nvim'
 
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
 """"""""""""""""
@@ -105,8 +109,33 @@ EOF
 lua require('lsp')
 
 
-""""""""""""
-" completion
-""""""""""""
+"""""""""""""""""
+" completion-nvim
+"""""""""""""""""
 set completeopt=menuone,noinsert
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+"map <c-p> to manually trigger completion
+imap <silent> <c-space> <Plug>(completion_trigger)
+
+"""""""""""""""
+" telescope.vim
+"""""""""""""""
+" Using lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+""""""""""""""""""
+" copy to clipboad
+""""""""""""""""""
+noremap <leader>y "+y
+
