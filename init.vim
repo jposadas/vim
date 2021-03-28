@@ -22,6 +22,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'AlessandroYorba/Alduin'
 Plug 'nanotech/jellybeans.vim'
+Plug 'ayu-theme/ayu-vim'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
@@ -68,7 +69,7 @@ set noshowmode
 set signcolumn=number
 set cursorline
 
-set colorcolumn=80
+set colorcolumn=81
 highlight ColorColumn ctermbg=lightgrey guibg=#2d323d
 
 nnoremap <SPACE> <Nop>

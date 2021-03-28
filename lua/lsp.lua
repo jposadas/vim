@@ -113,7 +113,7 @@ require('formatter').setup({
 		go = {
 			function()
 				return {
-					exe = "gofmt",
+					exe = "goreturns",
 					args = {},
 					stdin = true,
 				}
