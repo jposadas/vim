@@ -89,25 +89,11 @@ exe 'source' '~/.config/nvim/settings/vimwiki.vim'
 """"""""
 " autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
-"""""""""""""
-" tree-sitter
-"""""""""""""
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true
-    },
-    playground = {
-        enable = true
-    }
-}
-EOF
-
 """""
 " lsp
 """""
 lua require('lsp')
+lua require('treesitter')
 
 
 """""""""""""""""
