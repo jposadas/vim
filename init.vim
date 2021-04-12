@@ -43,7 +43,7 @@ endif
 
 syntax on
 filetype plugin on
-colorscheme jellybeans
+colorscheme ayu
 
 set nocompatible
 set background=dark

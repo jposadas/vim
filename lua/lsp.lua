@@ -38,7 +38,12 @@ lsp_config.gopls.setup {
 -- Elm
 -- npm install -g @elm-tooling/elm-language-server
 lsp_config.elmls.setup {
-    on_attach = on_attach
+    on_attach = function(client, bufnr)
+        if client.config.flags then
+            client.config.flags.allow_incremental_sync = true
+        end
+        on_attach(client, bufnr)
+    end
 }
 
 require("formatter").setup(
