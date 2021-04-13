@@ -100,7 +100,7 @@ require("formatter").setup(
                 end
             },
             -- lua
-            -- `npm install -g lua-fmt`
+            -- npm install -g lua-fmt
             lua = {
                 function()
                     return {
@@ -111,7 +111,7 @@ require("formatter").setup(
                 end
             },
             -- elm
-            -- `npm install -g elm-format
+            -- npm install -g elm-format
             elm = {
                 function()
                     return {
